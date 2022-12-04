@@ -6,7 +6,7 @@
 
     <groupId>me.blueslime.bossbar</groupId>
     <artifactId>BossBarTools</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
     <packaging>jar</packaging>
 
     <name>BossBarTools</name>
@@ -42,34 +42,6 @@
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <relocations>
-                        <relocation>
-                            <pattern>com.cryptomorin.xseries</pattern>
-                            <shadedPattern>com.comugamers.blitzskywars.external.xseries</shadedPattern>
-                        </relocation>
-                        <relocation>
-                            <pattern>com.xism4.sternalboard</pattern>
-                            <shadedPattern>com.comugamers.blitzskywars.external.sternalboard</shadedPattern>
-                        </relocation>
-                    </relocations>
-
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-
-                            <excludes>
-                                <exclude>com/cryptomorin/xseries/XBiome*</exclude>}
-                                <exclude>com/cryptomorin/xseries/NoteBlockMusic*</exclude>
-                                <exclude>com/cryptomorin/xseries/XBlock*</exclude>
-                                <exclude>com/cryptomorin/xseries/XEntity*</exclude>
-                                <exclude>com/cryptomorin/xseries/XPotion*</exclude>
-                                <exclude>com/cryptomorin/xseries/XTag*</exclude>
-                                <exclude>com/cryptomorin/xseries/XItemStack*</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
-                </configuration>
             </plugin>
         </plugins>
         <resources>
@@ -102,13 +74,6 @@
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/spigot-1-8.jar</systemPath>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.cryptomorin</groupId>
-            <artifactId>XSeries</artifactId>
-            <version>9.0.0</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

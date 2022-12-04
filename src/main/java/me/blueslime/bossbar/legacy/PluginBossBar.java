@@ -1,11 +1,11 @@
 package me.blueslime.bossbar.legacy;
 
-import com.cryptomorin.xseries.ReflectionUtils;
 import net.minecraft.server.v1_8_R3.EntityWither;
 import net.minecraft.server.v1_8_R3.PacketPlayOutEntityDestroy;
 import net.minecraft.server.v1_8_R3.PacketPlayOutSpawnEntityLiving;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;
@@ -68,8 +68,7 @@ public class PluginBossBar {
             );
 
 
-            ReflectionUtils.sendPacket(
-                    player,
+            ((CraftPlayer)player).getHandle().playerConnection.sendPacket(
                     packet
             );
         } catch (Exception ignored) {
@@ -91,8 +90,7 @@ public class PluginBossBar {
 
                 PacketPlayOutEntityDestroy packet = new PacketPlayOutEntityDestroy(id);
 
-                ReflectionUtils.sendPacket(
-                        player,
+                ((CraftPlayer)player).getHandle().playerConnection.sendPacket(
                         packet
                 );
             } catch (Exception ignored) { }
